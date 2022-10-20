@@ -5,3 +5,4 @@ Werkzeug==1.0.1
 Flask_HTTPAuth==4.7.0
 Flask==1.1.2
 tinydb==4.7.0
+gunicorn==20.4.0
