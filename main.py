@@ -192,8 +192,8 @@ class Messages(db.Model, SerializerMixin):
     sender_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     receiver_id = db.Column(db.Integer, nullable=False)
 
-db.create_all()
-db.session.commit()
+# db.create_all()
+# db.session.commit()
 
 
 
