@@ -24,10 +24,9 @@ STATUS_SUCCESS = {'status': 200}
 users = api_db.all()
 all_api_users = {}
 for i in range(len(users)):
-    print(i)
     for key in users[i]:
         all_api_users[key] = users[i][key]
-print(all_api_users)
+# print(all_api_users)
 
 @auth.verify_password
 def verify_password(username, password):
@@ -193,8 +192,9 @@ class Messages(db.Model, SerializerMixin):
     receiver_id = db.Column(db.Integer, nullable=False)
 
 # db.create_all()
-# db.session.commit()
-
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 
 #app routes
